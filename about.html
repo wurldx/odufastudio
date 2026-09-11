@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | YOUR STUDIO</title>
+  <meta name="description" content="Learn more about the photographer and creative director behind Your Studio." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="page">
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header is-scrolled">
+      <div class="container">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/images/logo-placeholder.svg" alt="Your Studio logo" />
+        </a>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="index.html#portraits">Portraits</a>
+          <a href="index.html#graduation">Graduation</a>
+          <a href="index.html#studio">Studio</a>
+          <a href="about.html" class="is-active">About</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="Behance">BE</a>
+            <a href="#" aria-label="LinkedIn">IN</a>
+          </div>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="index.html#portraits">Portraits</a>
+      <a href="index.html#graduation">Graduation</a>
+      <a href="index.html#studio">Studio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <main id="main">
+      <section class="about-section">
+        <div class="container about-grid">
+          <div class="about-photo reveal">
+            <img src="assets/images/about-portrait.svg" alt="Photographer portrait placeholder" />
+          </div>
+
+          <div class="about-copy reveal">
+            <span class="eyebrow">Photographer</span>
+            <h2>Your Name</h2>
+            <p>
+              I'm a portrait photographer and creative director. I came to
+              photography through graphic design, and I build every frame
+              like a poster — bold colors, clean composition, made to be
+              looked at twice.
+            </p>
+            <p>
+              My style is cinematic. I shoot across the region, from concept
+              to final frame, and I'm always looking for the next collaborator
+              or brand to build something with.
+            </p>
+            <a class="btn" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <a class="logo" href="index.html">
+          <img src="assets/images/logo-placeholder.svg" alt="Your Studio logo" />
+        </a>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="social-icons" style="justify-content:center; margin-bottom: 18px;">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="Behance">BE</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+        <p class="footer-meta">&copy; <span id="year"></span> Your Studio. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

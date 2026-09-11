@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | YOUR STUDIO</title>
+  <meta name="description" content="Get in touch about a shoot, project, or collaboration." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="page">
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header is-scrolled">
+      <div class="container">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/images/logo-placeholder.svg" alt="Your Studio logo" />
+        </a>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="index.html#portraits">Portraits</a>
+          <a href="index.html#graduation">Graduation</a>
+          <a href="index.html#studio">Studio</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="Behance">BE</a>
+            <a href="#" aria-label="LinkedIn">IN</a>
+          </div>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="index.html#portraits">Portraits</a>
+      <a href="index.html#graduation">Graduation</a>
+      <a href="index.html#studio">Studio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <main id="main">
+      <section class="contact-hero">
+        <div class="contact-image-grid">
+          <img src="assets/images/contact-1.svg" alt="Work sample placeholder 1" />
+          <img src="assets/images/contact-2.svg" alt="Work sample placeholder 2" />
+          <img src="assets/images/contact-3.svg" alt="Work sample placeholder 3" />
+          <img src="assets/images/contact-4.svg" alt="Work sample placeholder 4" />
+        </div>
+
+        <div class="container contact-intro">
+          <h1>Let's work together</h1>
+        </div>
+      </section>
+
+      <section class="contact-form-section">
+        <div class="container">
+          <form class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="project-type">Project type</label>
+                <select id="project-type" name="project-type">
+                  <option value="portraits">Portraits</option>
+                  <option value="graduation">Graduation</option>
+                  <option value="studio">Studio</option>
+                  <option value="event">Event</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="date">Preferred date</label>
+                <input type="date" id="date" name="date" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <div class="form-field">
+              <button type="submit" class="btn form-submit">Send message</button>
+              <p class="form-status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <a class="logo" href="index.html">
+          <img src="assets/images/logo-placeholder.svg" alt="Your Studio logo" />
+        </a>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="social-icons" style="justify-content:center; margin-bottom: 18px;">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="Behance">BE</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+        <p class="footer-meta">&copy; <span id="year"></span> Your Studio. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

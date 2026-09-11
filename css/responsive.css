@@ -1,0 +1,113 @@
+/* =========================================================
+   RESPONSIVE.CSS — Breakpoints (load after style/components)
+   ========================================================= */
+
+/* ---------- Tablet: <= 1024px ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 28px;
+  }
+
+  .about-grid {
+    gap: 40px;
+  }
+
+  .main-nav {
+    gap: 24px;
+  }
+}
+
+/* ---------- Small tablet / large phone: <= 860px ---------- */
+@media (max-width: 860px) {
+  .main-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Hide desktop header social icons on mobile-sized screens */
+  .site-header .social-icons {
+    display: none;
+  }
+
+  .contact-image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Phone: <= 640px ---------- */
+@media (max-width: 640px) {
+  :root {
+    --gutter: 20px;
+    --nav-height: 68px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-tile {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-content {
+    padding-bottom: 56px;
+  }
+
+  .hero-hint {
+    display: none;
+  }
+
+  .about-section {
+    padding-top: calc(var(--nav-height) + 36px);
+  }
+
+  .footer-nav {
+    gap: 18px 22px;
+  }
+}
+
+/* ---------- Small phone: <= 400px ---------- */
+@media (max-width: 400px) {
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .logo img {
+    max-height: 56px;
+    height: auto;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
