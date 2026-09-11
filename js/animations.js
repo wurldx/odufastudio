@@ -35,7 +35,7 @@ window.SiteAnimations = (function () {
       "scroll",
       () => {
         const offset = Math.min(window.scrollY * 0.25, 120);
-        hero.style.transform = `translateY(${offset}px) scale(1.05)`;
+        hero.style.transform = `translateY(${offset}px)`;
       },
       { passive: true }
     );
