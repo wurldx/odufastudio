@@ -8,6 +8,10 @@
     --gutter: 28px;
   }
 
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .about-grid {
     gap: 40px;
   }
@@ -25,6 +29,23 @@
 
   .nav-toggle {
     display: flex;
+  }
+
+  .portfolio-gallery {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .gallery-shell {
+    width: min(100%, 520px);
+    margin: 0 auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
   }
 
   .about-grid {
@@ -57,12 +78,25 @@
     --nav-height: 68px;
   }
 
-  .category-grid {
+  .hero {
+    min-height: 440px;
+    height: 70svh;
+  }
+
+  .gallery-shell {
+    width: min(100%, 460px);
+  }
+
+  .category-grid,
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
-  .category-tile {
+  .category-tile,
+  .gallery-grid .category-tile {
+    min-height: 380px;
     aspect-ratio: 4 / 3;
+    width: 100%;
   }
 
   .hero-content {
@@ -86,6 +120,15 @@
 @media (max-width: 400px) {
   .hero-content h1 {
     font-size: 2.1rem;
+  }
+
+  .category-label {
+    font-size: 1.8rem;
+  }
+
+  .gallery-header {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
   }
 
   .logo img {

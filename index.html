@@ -88,7 +88,6 @@
     </nav>
 
     <main id="main">
-      <!-- ============ HERO ============ -->
       <section class="hero">
         <div class="hero-media">
           <img src="assets/images/odufahero.webp.webp" alt="Placeholder hero photo" />
@@ -100,20 +99,27 @@
         <span class="hero-hint">Click a photo to view more</span>
       </section>
 
-      <!-- ============ CATEGORY GRID ============ -->
-      <section class="category-grid">
-        <a class="category-tile reveal" id="studio" href="#studio">
-          <img src="assets/images/tile-studio.svg" alt="Studio work placeholder" />
-          <h3>Studio</h3>
-        </a>
-        <a class="category-tile reveal" id="events" href="#events">
-          <img src="assets/images/tile-events.svg" alt="Events work placeholder" />
-          <h3>Events</h3>
-        </a>
-        <a class="category-tile reveal" id="portraits" href="#portraits">
-          <img src="assets/images/tile-portraits.svg" alt="Portraits placeholder" />
-          <h3>Portraits</h3>
-        </a>
+      <section class="portfolio-gallery" aria-label="Portfolio categories">
+        <div class="gallery-shell">
+          <div class="gallery-header">CLICK ON A PHOTO TO VIEW MORE</div>
+
+          <div class="gallery-grid">
+            <a class="category-tile reveal" id="portraits" href="#portraits" aria-label="Portraits">
+              <img src="assets/images/tile-portraits.svg" alt="Portraits placeholder" />
+              <span class="category-label">PORTRAITS</span>
+            </a>
+
+            <a class="category-tile reveal" id="studio" href="#studio" aria-label="Studio">
+              <img src="assets/images/tile-studio.svg" alt="Studio work placeholder" />
+              <span class="category-label">STUDIO</span>
+            </a>
+
+            <a class="category-tile reveal" id="graduation" href="#graduation" aria-label="Graduation">
+              <img src="assets/images/tile-grad.svg" alt="Graduation placeholder" />
+              <span class="category-label">GRADUATION</span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
