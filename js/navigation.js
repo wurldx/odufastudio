@@ -20,15 +20,21 @@ window.SiteNavigation = (function () {
     const drawer = document.querySelector(".mobile-nav");
     if (!toggle || !drawer) return;
 
+    const setToggleState = (isOpen) => {
+      toggle.classList.toggle("is-open", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    };
+
     const closeDrawer = () => {
       drawer.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
+      setToggleState(false);
       document.body.style.overflow = "";
     };
 
     const openDrawer = () => {
       drawer.classList.add("is-open");
-      toggle.setAttribute("aria-expanded", "true");
+      setToggleState(true);
       document.body.style.overflow = "hidden";
     };
 
