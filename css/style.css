@@ -2,6 +2,8 @@
    STYLE.CSS — Core variables, resets, typography, layout
    ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+
 :root {
   --color-bg: #ffffff;
   --color-bg-alt: #f7f7f7;
@@ -10,8 +12,8 @@
   --color-border: #e6e6e6;
   --color-accent: #e8e4dc;
 
-  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --tracking-wide: 0.12em;
   --tracking-wider: 0.2em;
@@ -41,6 +43,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 16px;
+  font-weight: 600;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -71,7 +74,7 @@ button {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
 }
 
