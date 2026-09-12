@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YOUR STUDIO | PORTRAIT PHOTOGRAPHER</title>
-  <meta name="description" content="Portrait photographer specializing in editorial, studio, and event photography. Every shoot built around your vision." />
+  <title>Portraits | YOUR STUDIO</title>
+  <meta name="description" content="A curated collection of portrait work, editorial compositions, and personal imagery." />
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -14,8 +14,6 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="page">
-
-    <!-- ============ HEADER ============ -->
     <header class="site-header">
       <div class="container">
         <a class="logo" href="index.html" aria-label="Home">
@@ -23,10 +21,11 @@
         </a>
 
         <nav class="main-nav" aria-label="Primary">
-          <a href="index.html" class="is-active">Home</a>
-          <a href="portraits.html">Portraits</a>
+          <a href="index.html">Home</a>
+          <a href="portraits.html" class="is-active">Portraits</a>
           <a href="index.html#events">Events</a>
           <a href="index.html#fashion">Fashion</a>
+          <a href="index.html#studio">Studio</a>
           <a href="about.html">About</a>
         </nav>
 
@@ -53,7 +52,6 @@
       </div>
     </header>
 
-    <!-- ============ MOBILE NAV DRAWER ============ -->
     <nav class="mobile-nav" aria-label="Mobile">
       <div class="mobile-nav-header">
         <a class="logo" href="index.html" aria-label="Home">
@@ -88,42 +86,48 @@
     </nav>
 
     <main id="main">
-      <section class="hero">
-        <div class="hero-media">
-          <img src="assets/images/odufahero.webp.webp" alt="Placeholder hero photo" />
-        </div>
-        <div class="hero-content">
-          <h1>Abubakar Odufa</h1>
-          <p>Photographer &amp; Creative Director</p>
-        </div>
-        
-      </section>
-
-      <section class="portfolio-gallery" aria-label="Portfolio categories">
-        <div class="gallery-shell">
-          <div class="gallery-header">CLICK ON A PHOTO TO VIEW MORE</div>
-
-          <div class="gallery-grid">
-            <a class="category-tile reveal" id="portraits" href="portraits.html" aria-label="Portraits">
-              <img src="assets/images/tile-portraits.svg" alt="Portraits placeholder" />
-              <span class="category-label">PORTRAITS</span>
-            </a>
-
-            <a class="category-tile reveal" id="studio" href="#studio" aria-label="Studio">
-              <img src="assets/images/tile-studio.svg" alt="Studio work placeholder" />
-              <span class="category-label">STUDIO</span>
-            </a>
-
-            <a class="category-tile reveal" id="graduation" href="#graduation" aria-label="Graduation">
-              <img src="assets/images/tile-grad.svg" alt="Graduation placeholder" />
-              <span class="category-label">GRADUATION</span>
-            </a>
-          </div>
+      <section class="portrait-gallery-wrap" aria-label="Portrait gallery">
+        <div class="portrait-masonry">
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 1" style="aspect-ratio: 4 / 5;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 2" style="aspect-ratio: 5 / 4;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 3" style="aspect-ratio: 4 / 5;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 4" style="aspect-ratio: 5 / 4;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 5" style="aspect-ratio: 4 / 5;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 6" style="aspect-ratio: 5 / 4;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 7" style="aspect-ratio: 4 / 5;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 8" style="aspect-ratio: 5 / 4;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 9" style="aspect-ratio: 4 / 5;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 10" style="aspect-ratio: 5 / 4;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 11" style="aspect-ratio: 4 / 5;" />
+          </button>
+          <button type="button" class="portrait-card reveal" data-full="assets/images/portrait-placeholder.svg" aria-label="Open portrait image">
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait placeholder 12" style="aspect-ratio: 5 / 4;" />
+          </button>
         </div>
       </section>
     </main>
 
-    <!-- ============ FOOTER ============ -->
     <footer class="site-footer">
       <div class="container site-footer-inner">
         <div class="footer-signature" aria-label="Signature">
@@ -155,6 +159,11 @@
       </div>
     </footer>
   </div>
+
+    <div class="lightbox" aria-hidden="true">
+      <button type="button" class="lightbox-close" aria-label="Close image">Close</button>
+      <img src="" alt="Expanded portrait" />
+    </div>
 
   <script src="js/navigation.js"></script>
   <script src="js/animations.js"></script>
