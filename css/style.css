@@ -32,9 +32,11 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
 }
 
 body {
+  margin: 0;
   background: #efefee;
   color: var(--color-text);
   font-family: var(--font-body);
