@@ -110,6 +110,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 88px 40px 72px;
   gap: 30px;
   transform: translateY(-100%);
   transition: transform var(--transition-med);
@@ -156,14 +157,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 34px;
+  justify-content: center;
+  gap: 18px;
+  width: fit-content;
+  max-width: calc(100% - 56px);
+  margin: 0 auto;
   text-align: center;
 }
 
 .mobile-nav .mobile-nav-list a {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: clamp(1.7rem, 4.5vw, 2.2rem);
+  font-weight: 600;
   letter-spacing: 0.08em;
+  line-height: 1.25;
+  padding: 4px 0;
+  margin: 0 24px;
 }
 
 /* Push social icons to the bottom */
