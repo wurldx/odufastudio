@@ -589,7 +589,7 @@ h1, h2, h3, h4 {
 
 .footer-signature img {
   display: block;
-  width: clamp(70px, 8vw, 120px);
+  width: clamp(56px, 6vw, 88px);
   height: auto;
   max-width: 100%;
   filter: grayscale(1) contrast(1.1);
@@ -621,13 +621,19 @@ h1, h2, h3, h4 {
 }
 
 .footer-socials a {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
   color: var(--color-text);
-  font-weight: 700;
 }
 
+.footer-socials svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
 .footer-copyright {
   margin-top: 6px;
   font-size: 0.72rem;
