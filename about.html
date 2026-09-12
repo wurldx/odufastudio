@@ -34,7 +34,7 @@
           <div class="social-icons">
             <a href="#" aria-label="Instagram">IG</a>
             <a href="#" aria-label="YouTube">YT</a>
-            <a href="#" aria-label="Behance">BE</a>
+            <a href="#" aria-label="TikTok">TT</a>
             <a href="#" aria-label="LinkedIn">IN</a>
           </div>
           <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -81,22 +81,23 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <a class="logo" href="index.html">
-          <img src="assets/images/logo-placeholder.svg" alt="Your Studio logo" />
-        </a>
-        <nav class="footer-nav" aria-label="Footer">
+      <div class="container site-footer-inner">
+        <div class="footer-signature" aria-label="Signature">LOV</div>
+
+        <nav class="footer-nav footer-links" aria-label="Footer">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <div class="social-icons" style="justify-content:center; margin-bottom: 18px;">
+
+        <div class="footer-socials">
           <a href="#" aria-label="Instagram">IG</a>
           <a href="#" aria-label="YouTube">YT</a>
           <a href="#" aria-label="Behance">BE</a>
           <a href="#" aria-label="LinkedIn">IN</a>
         </div>
-        <p class="footer-meta">&copy; <span id="year"></span> Your Studio. All rights reserved.</p>
+
+        <p class="footer-copyright">© 2026 Your Studio. All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -105,6 +106,5 @@
   <script src="js/animations.js"></script>
   <script src="js/form.js"></script>
   <script src="js/main.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

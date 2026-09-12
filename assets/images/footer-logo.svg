@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 180" role="img" aria-label="Odufa logo">
+  <title>Odufa logo</title>
+  <g fill="#111111">
+    <circle cx="80" cy="90" r="58" fill="none" stroke="#111111" stroke-width="16"/>
+    <rect x="142" y="32" width="24" height="116" rx="6"/>
+    <path d="M176 32h34c34 0 58 23 58 58s-24 58-58 58h-34V32zm34 86h10c18 0 30-11 30-28s-12-28-30-28h-10v56z"/>
+  </g>
+  <text x="290" y="102" font-size="52" font-weight="700" font-family="Arial, Helvetica, sans-serif" letter-spacing="8" fill="#111111">OD</text>
+</svg>
