@@ -6,6 +6,10 @@
   <title>YOUR STUDIO | PORTRAIT PHOTOGRAPHER</title>
   <meta name="description" content="Portrait photographer specializing in editorial, studio, and event photography. Every shoot built around your vision." />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="assets/images/odufahero.webp.webp" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
@@ -90,7 +94,7 @@
     <main id="main">
       <section class="hero">
         <div class="hero-media">
-          <img src="assets/images/odufahero.webp.webp" alt="Placeholder hero photo" />
+          <img src="assets/images/odufahero.webp.webp" alt="Placeholder hero photo" fetchpriority="high" decoding="async" loading="eager" />
         </div>
         <div class="hero-content">
           <h1>Abubakar Odufa</h1>
@@ -156,9 +160,9 @@
     </footer>
   </div>
 
-  <script src="js/navigation.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/form.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/form.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -28,10 +28,15 @@ window.SiteForm = (function () {
       }
     }
 
+    const honeypot = form.querySelector('input[name="website"]');
+    if (honeypot && honeypot.value.trim()) {
+      return "Your submission was flagged as invalid.";
+    }
+
     return null;
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
     const statusEl = form.querySelector(".form-status");
@@ -43,18 +48,36 @@ window.SiteForm = (function () {
       return;
     }
 
-    // Placeholder submit — wire this up to your email service /
-    // form backend of choice (Formspree, Netlify Forms, a custom
-    // API route, etc). This file intentionally has no booking
-    // or scheduling logic.
     submitBtn.setAttribute("disabled", "true");
     showStatus(statusEl, "Sending...", "pending");
 
-    setTimeout(() => {
-      showStatus(statusEl, "Thanks — your message has been sent. I'll be in touch soon.", "success");
+    try {
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      delete payload.website;
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.message || "Your message could not be sent right now.");
+      }
+
+      showStatus(statusEl, result.message || "Thanks — your message has been sent. I'll be in touch soon.", "success");
       form.reset();
+    } catch (submitError) {
+      showStatus(statusEl, submitError.message || "Something went wrong. Please try again.", "error");
+    } finally {
       submitBtn.removeAttribute("disabled");
-    }, 900);
+    }
   }
 
   function init() {
