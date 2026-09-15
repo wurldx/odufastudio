@@ -28,13 +28,21 @@
         <nav class="main-nav" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="portraits.html">Portraits</a>
-          <a href="index.html#events">Events</a>
-          <a href="index.html#fashion">Fashion</a>
-          <a href="index.html#studio">Studio</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-haspopup="true">Events</button>
+            <div class="nav-dropdown-menu">
+              <a href="corporate-event.html">Corporate Event</a>
+              <a href="brand-event.html">Brand Event</a>
+              <a href="other-event.html">Other Event</a>
+            </div>
+          </div>
+          <a href="fashion.html">Fashion</a>
+          <a href="studio.html">Studio</a>
           <a href="about.html">About</a>
         </nav>
 
-        <div class="social-icons">
+        <div class="header-actions">
+          <div class="social-icons">
         <a href="#" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.46.66.26 1.22.6 1.77 1.15.5.5.86 1.02 1.15 1.77.24.64.41 1.36.46 2.43.05 1.07.06 1.42.06 4.13s-.01 3.06-.06 4.13c-.05 1.07-.22 1.79-.46 2.43a4.9 4.9 0 01-1.15 1.77 4.9 4.9 0 01-1.77 1.15c-.64.24-1.36.41-2.43.46-1.07.05-1.42.06-4.12.06s-3.06-.01-4.13-.06c-1.07-.05-1.79-.22-2.43-.46a4.9 4.9 0 01-1.77-1.15A4.9 4.9 0 011.9 18.6c-.24-.64-.41-1.36-.46-2.43C1.39 15.1 1.38 14.75 1.38 12s.01-3.06.06-4.13c.05-1.07.22-1.79.46-2.43A4.9 4.9 0 012.85 3.67 4.9 4.9 0 014.62 2.52c.64-.24 1.36-.41 2.43-.46C8.12 2.01 8.47 2 11.18 2H12zm0 1.8c-2.66 0-2.98.01-4.03.06-.87.04-1.34.18-1.65.3-.42.16-.72.36-1.03.67-.31.31-.51.61-.67 1.03-.12.31-.26.78-.3 1.65C4.27 8.56 4.26 8.88 4.26 11.5v1c0 2.62.01 2.94.06 3.99.04.87.18 1.34.3 1.65.16.42.36.72.67 1.03.31.31.61.51 1.03.67.31.12.78.26 1.65.3 1.05.05 1.37.06 4.03.06s2.98-.01 4.03-.06c.87-.04 1.34-.18 1.65-.3.42-.16.72-.36 1.03-.67.31-.31.51-.61.67-1.03.12-.31.26-.78.3-1.65.05-1.05.06-1.37.06-3.99v-1c0-2.62-.01-2.94-.06-3.99-.04-.87-.18-1.34-.3-1.65a2.76 2.76 0 00-.67-1.03 2.76 2.76 0 00-1.03-.67c-.31-.12-.78-.26-1.65-.3-1.05-.05-1.37-.06-4.03-.06zM12 6.87a5.13 5.13 0 110 10.26 5.13 5.13 0 010-10.26zm0 1.8a3.33 3.33 0 100 6.66 3.33 3.33 0 000-6.66zm5.34-2.02a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
         </a>
@@ -47,17 +55,38 @@
         <a href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.5v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 3v5.5H9.5V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.3-1.8 3.6 0 4.2 2.4 4.2 5.4v6.2zM5.3 7.4a2 2 0 110-4 2 2 0 010 4zM7 20.4H3.6V9H7v11.4z"/></svg>
         </a>
+          </div>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
     </header>
 
     <nav class="mobile-nav" aria-label="Mobile">
-      <a href="index.html">Home</a>
-      <a href="portraits.html">Portraits</a>
-      <a href="events.html">Events</a>
-      <a href="fashion.html">Fashion</a>
-      <a href="studio.html">Studio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <div class="mobile-nav-header">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/images/logo-placeholder.svg" alt="Your Studio logo" />
+        </a>
+        <button class="nav-close" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile-nav-list">
+        <a href="index.html">Home</a>
+        <a href="portraits.html">Portraits</a>
+        <div class="mobile-event-menu">
+          <button class="mobile-event-toggle" type="button" aria-haspopup="true">Events</button>
+          <div class="mobile-event-links">
+            <a href="corporate-event.html">Corporate Event</a>
+            <a href="brand-event.html">Brand Event</a>
+            <a href="other-event.html">Other Event</a>
+          </div>
+        </div>
+        <a href="fashion.html">Fashion</a>
+        <a href="studio.html">Studio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
 
     <main id="main">

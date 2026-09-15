@@ -13,9 +13,46 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.SiteAnimations) window.SiteAnimations.init();
   if (window.SiteForm) window.SiteForm.init();
 
+  addGalleryPageHeading();
+  initImageSkeletons();
   setActiveNavLink();
   initPortraitLightbox();
 });
+
+function initImageSkeletons() {
+  document.querySelectorAll(".portrait-card").forEach((card) => {
+    const image = card.querySelector("img");
+    if (!image) return;
+
+    const finishLoading = () => card.classList.remove("is-loading");
+    card.classList.add("is-loading");
+    image.addEventListener("load", finishLoading, { once: true });
+    image.addEventListener("error", finishLoading, { once: true });
+
+    if (image.complete) finishLoading();
+  });
+}
+
+function addGalleryPageHeading() {
+  const gallery = document.querySelector(".portrait-gallery-wrap");
+  if (!gallery || gallery.querySelector(".gallery-page-heading")) return;
+
+  const labels = {
+    "Portrait gallery": "Portrait Gallery",
+    "Brand events gallery": "Brand Event Gallery",
+    "Corporate events gallery": "Corporate Event Gallery",
+    "Other events gallery": "Other Event Gallery",
+    "Fashion gallery": "Fashion Gallery",
+    "Studio gallery": "Studio Gallery"
+  };
+  const title = labels[gallery.getAttribute("aria-label")];
+  if (!title) return;
+
+  const headingWrap = document.createElement("div");
+  headingWrap.className = "gallery-page-heading";
+  headingWrap.innerHTML = `<h1>${title}</h1>`;
+  gallery.prepend(headingWrap);
+}
 
 function initPortraitLightbox() {
   const lightbox = document.querySelector(".lightbox");

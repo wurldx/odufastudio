@@ -8,7 +8,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="assets/images/odufahero.webp.webp" />
+  <link
+    rel="preload"
+    as="image"
+    href="assets/images/odufahero-desktop.webp"
+    fetchpriority="high"
+  />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -29,8 +34,16 @@
         <nav class="main-nav" aria-label="Primary">
           <a href="index.html" class="is-active">Home</a>
           <a href="portraits.html">Portraits</a>
-          <a href="index.html#events">Events</a>
-          <a href="index.html#fashion">Fashion</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-haspopup="true">Events</button>
+            <div class="nav-dropdown-menu">
+              <a href="corporate-event.html">Corporate Event</a>
+              <a href="brand-event.html">Brand Event</a>
+              <a href="other-event.html">Other Event</a>
+            </div>
+          </div>
+          <a href="fashion.html">Fashion</a>
+          <a href="studio.html">Studio</a>
           <a href="about.html">About</a>
         </nav>
 
@@ -69,8 +82,16 @@
       <div class="mobile-nav-list">
         <a href="index.html">Home</a>
         <a href="portraits.html">Portraits</a>
-        <a href="index.html#events">Events</a>
-        <a href="index.html#fashion">Fashion</a>
+        <div class="mobile-event-menu">
+          <button class="mobile-event-toggle" type="button" aria-haspopup="true">Events</button>
+          <div class="mobile-event-links">
+            <a href="corporate-event.html">Corporate Event</a>
+            <a href="brand-event.html">Brand Event</a>
+            <a href="other-event.html">Other Event</a>
+          </div>
+        </div>
+        <a href="fashion.html">Fashion</a>
+        <a href="studio.html">Studio</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -94,23 +115,32 @@
     <main id="main">
       <section class="hero">
         <div class="hero-media">
-          <img
-            src="assets/images/odufahero.webp.webp"
-            srcset="assets/images/odufahero.webp.webp 1200w, assets/images/odufahero.webp.webp 1800w"
-            sizes="100vw"
-            width="1800"
-            height="1200"
-            alt="Placeholder hero photo"
-            fetchpriority="high"
-            decoding="async"
-            loading="eager"
-          />
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcset="assets/images/odufahero-mobile.webp"
+            >
+
+            <source
+              media="(max-width: 1200px)"
+              srcset="assets/images/odufahero-tablet.webp"
+            >
+
+            <img
+              src="assets/images/odufahero-desktop.webp"
+              alt="Abubakar Odufa"
+              width="1920"
+              height="1080"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </picture>
         </div>
+
         <div class="hero-content">
           <h1>Abubakar Odufa</h1>
           <p>Photographer &amp; Creative Director</p>
         </div>
-        
       </section>
 
       <section class="portfolio-gallery" aria-label="Portfolio categories">
@@ -123,7 +153,7 @@
               <span class="category-label">PORTRAITS</span>
             </a>
 
-            <a class="category-tile reveal" id="studio" href="#studio" aria-label="Studio">
+            <a class="category-tile reveal" id="studio" href="studio.html" aria-label="Studio">
               <img src="assets/images/tile-studio.svg" alt="Studio work placeholder" />
               <span class="category-label">STUDIO</span>
             </a>
