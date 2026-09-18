@@ -57,7 +57,9 @@ export async function onRequestPost({ request, env }) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: `Odufa Studio <noreply@${env.EMAIL_DOMAIN || "resend.dev"}>`,
+        from: env.EMAIL_DOMAIN
+          ? `Odufa Studio <noreply@${env.EMAIL_DOMAIN}>`
+          : "Odufa Studio <onboarding@resend.dev>",
         to: [env.CONTACT_EMAIL],
         reply_to: emailValue,
         subject: `New Odufa Studio Enquiry — ${name}`,
