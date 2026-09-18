@@ -3,12 +3,6 @@
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const page = document.querySelector(".page");
-  if (page) {
-    // trigger the fade-in defined in style.css
-    requestAnimationFrame(() => page.classList.add("is-ready"));
-  }
-
   if (window.SiteNavigation) window.SiteNavigation.init();
   if (window.SiteAnimations) window.SiteAnimations.init();
   if (window.SiteForm) window.SiteForm.init();
