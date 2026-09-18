@@ -51,47 +51,93 @@ function addGalleryPageHeading() {
 function initPortraitLightbox() {
   const lightbox = document.querySelector(".lightbox");
   const img = lightbox ? lightbox.querySelector("img") : null;
-  const closeBtn = lightbox ? lightbox.querySelector(".lightbox-close") : null;
+  const closeBtn = lightbox
+    ? lightbox.querySelector(".lightbox-close")
+    : null;
 
   if (!lightbox || !img || !closeBtn) return;
 
   const cards = document.querySelectorAll(".portrait-card");
+
   if (!cards.length) return;
 
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      const full = card.dataset.full || card.querySelector("img")?.src || "";
-      if (!full) return;
+      const small = card.dataset.lightboxSmall || "";
+      const medium = card.dataset.lightboxMedium || "";
+      const large = card.dataset.lightboxLarge || "";
+
+      let full = large;
+
+      if (window.innerWidth <= 767) {
+        full = small;
+      } else if (window.innerWidth <= 1199) {
+        full = medium;
+      }
+
+      if (!full) {
+        console.warn(
+          "No optimized lightbox image found for this gallery item."
+        );
+        return;
+      }
+
+      img.removeAttribute("src");
 
       img.src = full;
-      img.alt = card.querySelector("img")?.alt || "Expanded portrait";
+
+      img.alt =
+        card.querySelector("img")?.alt ||
+        "Expanded portrait";
+
       lightbox.classList.add("is-open");
-      lightbox.setAttribute("aria-hidden", "false");
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
       document.body.style.overflow = "hidden";
     });
   });
 
-  closeBtn.addEventListener("click", () => {
+  closeBtn.addEventListener(
+    "click",
+    closeLightbox
+  );
+
+  lightbox.addEventListener(
+    "click",
+    (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    }
+  );
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains("is-open")
+      ) {
+        closeLightbox();
+      }
+    }
+  );
+
+  function closeLightbox() {
     lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
     document.body.style.overflow = "";
-  });
 
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      lightbox.classList.remove("is-open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
-      lightbox.classList.remove("is-open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-  });
+    img.removeAttribute("src");
+  }
 }
 
 /**
