@@ -1,5 +1,5 @@
 /assets/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=3600
 
 /css/*
   Cache-Control: public, max-age=300, stale-while-revalidate=604800
