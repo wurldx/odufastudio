@@ -42,7 +42,7 @@ export async function onRequestPost({ request, env }) {
       return jsonResponse({ message: errors[0] }, 400);
     }
 
-    if (!env.EMAIL_API_KEY || !env.CONTACT_EMAIL) {
+    if (!env.RESEND_API_KEY || !env.CONTACT_EMAIL) {
       return jsonResponse({ message: "Email configuration is not available right now." }, 500);
     }
 
@@ -53,7 +53,7 @@ export async function onRequestPost({ request, env }) {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${env.EMAIL_API_KEY}`,
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
