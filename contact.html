@@ -6,12 +6,8 @@
   <title>Contact | YOUR STUDIO</title>
   <meta name="description" content="Get in touch about a shoot, project, or collaboration." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/space-grotesk-600-latin.woff2" />
+  <link rel="stylesheet" href="css/site.min.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -91,12 +87,18 @@
 
     <main id="main">
       <section class="contact-hero">
-        <div class="contact-image-grid">
-          <img src="assets/images/contact-1.svg" alt="Work sample placeholder 1" />
-          <img src="assets/images/contact-2.svg" alt="Work sample placeholder 2" />
-          <img src="assets/images/contact-3.svg" alt="Work sample placeholder 3" />
-          <img src="assets/images/contact-4.svg" alt="Work sample placeholder 4" />
-        </div>
+        <video
+          class="contact-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-label="Studio showreel"
+        >
+          <source src="assets/video/IMG_2646.mp4" type="video/mp4" />
+          Your browser does not support embedded videos.
+        </video>
 
         <div class="container contact-intro">
           <h1>Let's work together</h1>

@@ -62,10 +62,6 @@
     display: none;
   }
 
-  .contact-image-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .form-row {
     grid-template-columns: 1fr;
   }

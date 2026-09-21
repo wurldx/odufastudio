@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initImageSkeletons();
   setActiveNavLink();
   initPortraitLightbox();
+  initContactVideo();
 });
 
 function initImageSkeletons() {
@@ -137,6 +138,24 @@ function initPortraitLightbox() {
     document.body.style.overflow = "";
 
     img.removeAttribute("src");
+  }
+}
+
+/**
+ * Ensures the contact page hero video autoplays (muted) reliably.
+ * Some browsers ignore the `muted` attribute in markup, which blocks autoplay.
+ */
+function initContactVideo() {
+  const video = document.querySelector(".contact-video");
+  if (!video) return;
+
+  video.muted = true;
+
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === "function") {
+    playPromise.catch(() => {
+      /* Autoplay blocked by the browser; nothing else to do here. */
+    });
   }
 }
 

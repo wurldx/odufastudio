@@ -7,24 +7,50 @@
   <title>YOUR STUDIO | PORTRAIT PHOTOGRAPHER</title>
   <meta name="description" content="Portrait photographer specializing in editorial, studio, and event photography. Every shoot built around your vision." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
- <link
-  rel="preload"
-  as="image"
-  href="assets/images/odufahero-desktop.webp"
-  imagesrcset="
-    assets/images/odufahero-mobile.webp 640w,
-    assets/images/odufahero-tablet.webp 1200w,
-    assets/images/odufahero-desktop.webp 1920w
-  "
-  imagesizes="100vw"
-  fetchpriority="high"
-/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <!-- Hero image = the LCP element. These three preloads mirror the <picture>
+       media queries further down the page exactly and are mutually exclusive,
+       so exactly ONE hero file is fetched. The previous single preload used
+       imagesrcset/imagesizes (w-descriptors, 100vw) while the <picture> used
+       media queries. Those two rules disagree on most devices: a DPR>=2 phone
+       resolved "100vw" to 1170px and preloaded the 1200w tablet file (299 KB)
+       while the <picture> rendered the 768w mobile file (98 KB) -- two hero
+       downloads, and the real LCP image was never the preloaded one. -->
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    fetchpriority="high"
+    href="assets/images/odufahero-mobile.webp"
+    media="(max-width: 640px)"
+  />
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    fetchpriority="high"
+    href="assets/images/odufahero-tablet.webp"
+    media="(min-width: 641px) and (max-width: 1200px)"
+  />
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    fetchpriority="high"
+    href="assets/images/odufahero-desktop.webp"
+    media="(min-width: 1201px)"
+  />
+
+  <!-- Above-the-fold font only. Space Grotesk 600 is the single weight the site
+       uses, so this is the only font file needed to paint the header and hero. -->
+  <link
+    rel="preload"
+    as="font"
+    type="font/woff2"
+    crossorigin
+    href="assets/fonts/space-grotesk-600-latin.woff2"
+  />
+
+  <link rel="stylesheet" href="css/site.min.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -126,18 +152,23 @@
             <source
               media="(max-width: 640px)"
               srcset="assets/images/odufahero-mobile.webp"
+              type="image/webp"
             >
 
             <source
               media="(max-width: 1200px)"
               srcset="assets/images/odufahero-tablet.webp"
+              type="image/webp"
             >
 
+            <!-- width/height are the REAL pixel dimensions of odufahero-desktop.webp
+                 (1920x2400, a 4:5 crop). They previously said 1920x1080, which gave
+                 the browser an intrinsic ratio of 16:9 for a 4:5 file. -->
             <img
               src="assets/images/odufahero-desktop.webp"
               alt="Odufa Abubakar"
               width="1920"
-              height="1080"
+              height="2400"
               fetchpriority="high"
               decoding="async"
             >
@@ -155,18 +186,57 @@
           <div class="gallery-header">CLICK ON A PHOTO TO VIEW MORE</div>
 
           <div class="gallery-grid">
+            <!-- These three tiles used to load the untouched originals eagerly:
+                 6337x4225 (2.3 MB), 4480x6720 (238 KB) and 2502x3127 (692 KB) --
+                 ~3.2 MB competing with the hero image for the same connection.
+                 They now use the optimized/ variants that already exist for the
+                 gallery pages, are lazy-loaded (they sit below the hero on every
+                 breakpoint) and carry their real pixel dimensions. -->
             <a class="category-tile reveal" id="events" href="brand-event.html" aria-label="Events">
-              <img src="assets/images/brandevent/brand events 17.webp" alt="Choose Milk Event" />
+              <img
+                src="assets/images/brandevent/optimized/brand events 17-800.webp"
+                srcset="assets/images/brandevent/optimized/brand events 17-480.webp 480w,
+                        assets/images/brandevent/optimized/brand events 17-800.webp 800w,
+                        assets/images/brandevent/optimized/brand events 17-1200.webp 1200w"
+                sizes="(max-width: 860px) 92vw, (max-width: 1024px) 46vw, 33vw"
+                width="800"
+                height="533"
+                alt="Choose Milk Event"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="category-label">EVENTS</span>
             </a>
 
             <a class="category-tile reveal" id="studio" href="studio.html" aria-label="Studio">
-              <img src="assets/images/studio/studio-pics-2.webp" alt="Studio Ayuba" />
+              <img
+                src="assets/images/studio/optimized/studio-pics-2-800.webp"
+                srcset="assets/images/studio/optimized/studio-pics-2-480.webp 480w,
+                        assets/images/studio/optimized/studio-pics-2-800.webp 800w,
+                        assets/images/studio/optimized/studio-pics-2-1200.webp 1200w"
+                sizes="(max-width: 860px) 92vw, (max-width: 1024px) 46vw, 33vw"
+                width="800"
+                height="1200"
+                alt="Studio Ayuba"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="category-label">STUDIO</span>
             </a>
 
             <a class="category-tile reveal" id="fashion" href="fashion.html" aria-label="Graduation">
-              <img src="assets/images/fashion/fashion-pics-11.webp" alt="Runway Images" />
+              <img
+                src="assets/images/fashion/optimized/fashion-pics-11-800.webp"
+                srcset="assets/images/fashion/optimized/fashion-pics-11-480.webp 480w,
+                        assets/images/fashion/optimized/fashion-pics-11-800.webp 800w,
+                        assets/images/fashion/optimized/fashion-pics-11-1200.webp 1200w"
+                sizes="(max-width: 860px) 92vw, (max-width: 1024px) 46vw, 33vw"
+                width="800"
+                height="1000"
+                alt="Runway Images"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="category-label">FASHION</span>
             </a>
           </div>
